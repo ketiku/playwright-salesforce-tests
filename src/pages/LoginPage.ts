@@ -11,15 +11,15 @@ export class LoginPage {
     }
 
     async fillUsername() {
-        await this.page.getByTestId('username').fill(this.username);
+        await this.page.locator('#username').fill(this.username);
     }
 
     async fillPassword() {
-        await this.page.getByTestId('password').fill(this.password);
+        await this.page.locator('#password').fill(this.password);
     }
 
     async clickLoginButton() {
-        await this.page.getByTestId('Login').click()
+        await this.page.locator('#Login').click()
         .catch(
             async (error) => {
                 console.error('Login failed:', error);
